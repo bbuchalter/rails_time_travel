@@ -4,10 +4,5 @@ RailsTimeTravel::Engine.routes.draw do
 end
 
 Rails.application.routes.draw do
-  begin
-    mount RailsTimeTravel::Engine => "/rails/time_travel", as: 'rails_time_travel'
-  rescue ArgumentError
-      # already added
-      # this code exist here because engine not includes routing automatically
-  end
+  mount RailsTimeTravel::Engine, at: "/rails/time_travel", as: 'rails_time_travel'
 end
