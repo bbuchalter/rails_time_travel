@@ -2,6 +2,8 @@ require_dependency "rails_time_travel/application_controller"
 
 module RailsTimeTravel
   class ManageController < RailsTimeTravel::ApplicationController
+    skip_authorization_check
+
     def index
     end
 
