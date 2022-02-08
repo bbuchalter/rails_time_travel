@@ -4,6 +4,8 @@ module RailsTimeTravel
   class Engine < ::Rails::Engine
     isolate_namespace RailsTimeTravel
 
-    ActionController::Base.send :include, RailsTimeTravel::Controller
+    # config.after_initialize do
+      ApplicationController.send :include, RailsTimeTravel::Controller
+    # end
   end
 end
